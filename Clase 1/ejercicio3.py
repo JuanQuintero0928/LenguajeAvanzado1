@@ -1,11 +1,8 @@
-from tkinter import E
-
-
-terminos = int(input("Digite un numero para realizar el algoritmo : "))
+terminos = int(input("Digite un numero para hallar el valor de pi : "))
 
 denominador = 3
 resultado = 1
-
+    
 for i in range (terminos):
     division = 1 / denominador
     denominador = denominador + 2
