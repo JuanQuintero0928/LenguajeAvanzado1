@@ -43,6 +43,14 @@ class Geometria():
             print("Solo se aceptan valores numericos. Digite de nuevo una opcion.")
             u.mostrar_menu()
 
+    def mostrar_resultados(var1, area, volumen, objeto):
+        print("""
+            ------------ RESULTADOS ------------
+            """)
+        print("El Area del " + objeto + " es de : " + str(round(area,2)))
+        print("El Volumen del " + objeto + " es de : " + str(round(volumen,2)))
+        u.mostrar_menu()
+
     def cubo(self):
         print("""
             ------------ CUBO ------------
@@ -50,11 +58,10 @@ class Geometria():
         try:
             self.area = float(input("Digite el area de un lado del cubo : "))
             if self.area > 0:
+                Objeto = "Cubo"
                 AreaCubo = 6 * (self.area**2)
                 VolumenCubo = self.area**3
-                print("El Area total del Cubo es de : " + str(round(AreaCubo, 2)))
-                print("El Volumen total del Cubo es de : " + str(round(VolumenCubo, 2)))
-                u.mostrar_menu()
+                u.mostrar_resultados(AreaCubo,VolumenCubo,Objeto)
             else:
                 print("El numero debe ser mayor a 0.")
                 u.cubo()
@@ -70,17 +77,15 @@ class Geometria():
             self.altura = float(input("Digite la altura del cilindro : "))
             self.radio = float(input("Digite el radio del cilindro : "))
             if self.altura > 0 and self.radio > 0:
-                AreaCilindro = 2 * math.pi * \
-                    self.radio * (self.altura + self.radio)
+                Objeto = "Cilindro"
+                AreaCilindro = 2 * math.pi * self.radio * (self.altura + self.radio)
                 VolumenCilindro = math.pi * (self.radio**2) * self.altura
-                print("El Area total del Cilindro es de : " + str(round(AreaCilindro, 2)))
-                print("El Volumen total del Cilindro es de : " + str(round(VolumenCilindro, 2)))
-                u.mostrar_menu()
+                u.mostrar_resultados(AreaCilindro,VolumenCilindro,Objeto)
             else:
                 print("Los numeros deben ser mayores a 0.")
                 u.cilindro()
         except ValueError:
-            print("Solo se aceptan valores numericos")
+            print("Solo se aceptan valores numericos.")
             u.cilindro()
 
     def esfera(self):
@@ -90,16 +95,15 @@ class Geometria():
         try:
             self.radio = float(input("Digite el radio de la esfera : "))
             if self.radio > 0:
+                Objeto = "Esfera"
                 AreaEsfera = 4 * math.pi * self.radio**2
                 VolumenEsfera = (4/3) * math.pi * self.radio**3
-                print("El Area de la Esfera es de : " + str(round(AreaEsfera,2)))
-                print("El Volumen de la Esfera es de : " + str(round(VolumenEsfera,2)))
-                u.mostrar_menu()
+                u.mostrar_resultados(AreaEsfera,VolumenEsfera,Objeto)
             else:
                 print("El numero debe ser mayor a 0.")
                 u.esfera()
         except ValueError:
-            print("Solo se aceptan valores numericos")
+            print("Solo se aceptan valores numericos.")
             u.esfera()
 
     def cono(self):
@@ -111,11 +115,10 @@ class Geometria():
             self.generatriz = float(input("Digite la generatriz del Cono : "))
             self.altura = float(input("Ingrese la altura del Cono : "))
             if self.radio > 0 and self.generatriz > 0 and self.altura > 0:
+                Objeto = "Cono"
                 AreaCono = math.pi * self.radio**2 + math.pi * self.radio * self.generatriz
                 VolumenCono = (math.pi * self.radio**2 * self.altura)/3
-                print("El Area del Cono es de : " + str(round(AreaCono,2)))
-                print("El Volumen del Cono es de : " + str(round(VolumenCono,2)))
-                u.mostrar_menu()
+                u.mostrar_resultados(AreaCono,VolumenCono,Objeto)
             else:
                 print("El numero debe ser mayor a 0.")
                 u.cono()
