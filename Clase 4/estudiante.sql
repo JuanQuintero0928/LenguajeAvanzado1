@@ -12,6 +12,7 @@ create table estudiante(
     nombres varchar (70) not null,
     apellidos varchar (70) not null,
     tipo_documento varchar(2) not null,
+    numero_documento varchar(12) not null,
     fecha_nacimiento date not null,
     correo varchar(50) not null,
     carrera varchar(50) not null
