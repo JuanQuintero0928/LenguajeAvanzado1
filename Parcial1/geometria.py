@@ -113,7 +113,7 @@ class Geometria():
         try:
             self.radio = float(input("Digite el radio del Cono : "))
             self.generatriz = float(input("Digite la generatriz del Cono : "))
-            self.altura = float(input("Ingrese la altura del Cono : "))
+            self.altura = float(input("Digite la altura del Cono : "))
             if self.radio > 0 and self.generatriz > 0 and self.altura > 0:
                 Objeto = "Cono"
                 AreaCono = math.pi * self.radio**2 + math.pi * self.radio * self.generatriz
